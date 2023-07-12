@@ -1,17 +1,17 @@
 # HeartBeatNet
-Attention Based U-Net for PCG Signal classification
+Attention Based U-Net for PCG Signal classification <br>
+![WhatsApp Image 2023-07-10 at 21 24 35](https://github.com/anantmehta33/HeartBeatNet/assets/87894541/ac31d1df-33a3-4c68-9119-d9383f93510d) <br>
+# Methodology used in the pipeline: <br>
+# Methodology: <br>
 
-Let's understand the Methodology used in out project:
-Methodology:
-
-U-Net Architecture:
+# U-Net Architecture: <br>
 U-Net is a popular architecture for semantic segmentation tasks, which aims to classify each pixel in an image. It consists of an encoder (downsampling path) and a decoder (upsampling path). The encoder captures the context and extracts high-level features, while the decoder recovers spatial information and generates the final segmentation map.
 In our code, the U-Net architecture is modified with additional fully connected layers at the end for classification purposes.
 
-Data Augmentation:
+# Data Augmentation: <br>
 Data augmentation is performed using the ImageDataGenerator class from TensorFlow. It applies various transformations such as shear, zoom, and horizontal flip to the training images. These transformations help increase the diversity and size of the training data, reducing overfitting and improving the model's generalization ability.
 
-Attention Mechanism:
+# Attention Mechanism: <br>
 The attention mechanism in this code aims to enhance the model's ability to focus on informative regions in the input images.
 The attention block takes two inputs: the feature maps from the U-Net decoder (x) and the feature maps from the corresponding encoder skip connection (gating).
 The attention block performs the following steps:
@@ -36,16 +36,14 @@ Model Training and Evaluation:
 
 The attention mechanism in this code helps the model focus on relevant regions and can improve the segmentation results by assigning higher weights to informative features. It enhances the model's capability to capture fine details and boundaries, leading to better segmentation accuracy.
 
-Now lets understand the Attention Mechanism in depth:
+# The attention mechanism works as follows: <br>
 
-The attention mechanism works as follows:
-
-Inputs to the Attention Block:
+# Inputs to the Attention Block: <br> 
         The attention block takes two inputs:
             x: Feature maps from the U-Net decoder, which capture high-level semantic information.
             gating: Feature maps from the corresponding encoder skip connection, which contain lower-level spatial information.
 
-Theta and Phi Convolutions:
+# Theta and Phi Convolutions: <br>
         Theta Convolution (theta_x): A 2x2 convolution is applied to the decoder feature maps (x) to reduce the spatial dimensions while preserving the channel                   information. This helps to capture the global context of the feature maps.
         Phi Convolution (phi_g): A 1x1 convolution is applied to the gating feature maps to reduce the dimensions while retaining the channel information. This                   operation reduces the computational complexity and prepares the gating feature maps for subsequent operations.
 
@@ -74,7 +72,9 @@ Result and Batch Normalization:
         Batch normalization helps stabilize the training process and improve the model's generalization by normalizing the tensor's statistics across the batch                   dimension.
 
 By applying attention weights, the model can selectively enhance or suppress specific spatial locations and features, improving its ability to capture important details and boundaries during the segmentation 
-process.
+process. <br>
+
+# Workflow: <br>
 
 ![hello1](https://github.com/anantmehta33/HeartBeatNet/assets/71447155/99c9f47c-ab3e-48e1-8ce9-50969b61be27)
 
