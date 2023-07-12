@@ -27,7 +27,7 @@ The attention block performs the following steps:
             Result: 1x1 convolution to recover the original number of channels.
             Batch normalization is applied to the final result.
             
-Model Training and Evaluation:
+# Model Training and Evaluation: <br>
         The model is compiled with the categorical cross-entropy loss, SGD optimizer, and metrics including accuracy and sensitivity at a specific specificity.
         The fit method is used to train the model on the training set and validate it on the test set.
         The training history is stored in plotter.
