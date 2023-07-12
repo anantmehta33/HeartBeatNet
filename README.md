@@ -1,5 +1,5 @@
 # HeartBeatNet
-Attention Based U-Net for PCG Signal classification <br>
+# Attention Based U-Net for PCG Signal classification <br>
 ![WhatsApp Image 2023-07-10 at 21 24 35](https://github.com/anantmehta33/HeartBeatNet/assets/87894541/ac31d1df-33a3-4c68-9119-d9383f93510d) <br>
 # Methodology used in the pipeline: <br>
 # Methodology: <br>
