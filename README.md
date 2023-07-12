@@ -65,7 +65,8 @@ Attention Coefficients:
 Applying Attention to the Decoder Feature Maps:
         The attention coefficients are upsampled to the original spatial dimensions of the decoder feature maps (upsample_psi).
         The upsampled attention coefficients are repeated along the channel dimension to match the depth of the decoder feature maps using repeat_elem.
-        Element-wise multiplication is performed between the upsampled attention coefficients and the decoder feature maps.
+        Element-wise multiplication is performe![Att_unet_github](https://github.com/anantmehta33/HeartBeatNet/assets/71447155/62a8aed0-7c7f-43c8-9929-40ad4486178d)
+d between the upsampled attention coefficients and the decoder feature maps.
         This operation applies the attention weights obtained from the gating feature maps to the decoder feature maps, emphasizing important spatial locations and              features while suppressing less relevant information.
 
 Result and Batch Normalization:
