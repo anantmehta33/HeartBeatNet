@@ -27,7 +27,7 @@ The attention block performs the following steps:
             Result: 1x1 convolution to recover the original number of channels.
             Batch normalization is applied to the final result.
             
-# Model Training and Evaluation: <br>
+Model Training and Evaluation: <br>
         The model is compiled with the categorical cross-entropy loss, SGD optimizer, and metrics including accuracy and sensitivity at a specific specificity.
         The fit method is used to train the model on the training set and validate it on the test set.
         The training history is stored in plotter.
@@ -47,26 +47,26 @@ The attention mechanism in this code helps the model focus on relevant regions a
         Theta Convolution (theta_x): A 2x2 convolution is applied to the decoder feature maps (x) to reduce the spatial dimensions while preserving the channel                   information. This helps to capture the global context of the feature maps.
         Phi Convolution (phi_g): A 1x1 convolution is applied to the gating feature maps to reduce the dimensions while retaining the channel information. This                   operation reduces the computational complexity and prepares the gating feature maps for subsequent operations.
 
-Upsampling the Gating Feature Maps:
+# Upsampling the Gating Feature Maps: <br>
         The gating feature maps are upsampled to the same spatial dimensions as the theta feature maps using a transposed convolution operation (upsample_g).
         This operation ensures that the gating feature maps have the same size as the theta feature maps, allowing element-wise addition later in the process.
 
-Concatenation and Activation:
+# Concatenation and Activation: <br>
         The upsampled gating feature maps and the theta feature maps are concatenated (concat_xg).
         The concatenated tensor is passed through an activation function (ReLU) to introduce non-linearity and capture relevant relationships between the two sets of             feature maps (act_xg).
 
-Attention Coefficients:
+# Attention Coefficients: <br>
         The concatenated tensor is passed through a 1x1 convolutional layer (psi) to reduce the tensor depth to 1 (channel-wise attention).
         A sigmoid activation function is applied (sigmoid_xg) to obtain attention coefficients in the range [0, 1].
         These attention coefficients represent the importance of each channel in the gating feature maps for each spatial position in the theta feature maps.
 
-Applying Attention to the Decoder Feature Maps:
+# Applying Attention to the Decoder Feature Maps: <br>
         The attention coefficients are upsampled to the original spatial dimensions of the decoder feature maps (upsample_psi).
         The upsampled attention coefficients are repeated along the channel dimension to match the depth of the decoder feature maps using repeat_elem.
         Element-wise multiplication is performed between the upsampled attention coefficients and the decoder feature maps.
         This operation applies the attention weights obtained from the gating feature maps to the decoder feature maps, emphasizing important spatial locations and              features while suppressing less relevant information.
 
-Result and Batch Normalization:
+# Result and Batch Normalization: <br>
         The multiplied tensor is passed through a 1x1 convolutional layer (result) to recover the original number of channels.
         Batch normalization is applied to the resulting tensor (result_bn).
         Batch normalization helps stabilize the training process and improve the model's generalization by normalizing the tensor's statistics across the batch                   dimension.
