@@ -65,8 +65,7 @@ Attention Coefficients:
 Applying Attention to the Decoder Feature Maps:
         The attention coefficients are upsampled to the original spatial dimensions of the decoder feature maps (upsample_psi).
         The upsampled attention coefficients are repeated along the channel dimension to match the depth of the decoder feature maps using repeat_elem.
-        Element-wise multiplication is performe![Att_unet_github](https://github.com/anantmehta33/HeartBeatNet/assets/71447155/62a8aed0-7c7f-43c8-9929-40ad4486178d)
-d between the upsampled attention coefficients and the decoder feature maps.
+        Element-wise multiplication is performed between the upsampled attention coefficients and the decoder feature maps.
         This operation applies the attention weights obtained from the gating feature maps to the decoder feature maps, emphasizing important spatial locations and              features while suppressing less relevant information.
 
 Result and Batch Normalization:
@@ -74,6 +73,11 @@ Result and Batch Normalization:
         Batch normalization is applied to the resulting tensor (result_bn).
         Batch normalization helps stabilize the training process and improve the model's generalization by normalizing the tensor's statistics across the batch                   dimension.
 
-By applying attention weights, the model can selectively enhance or suppress specific spatial locations and features, improving its ability to capture important details and boundaries during the segmentation process.
+By applying attention weights, the model can selectively enhance or suppress specific spatial locations and features, improving its ability to capture important details and boundaries during the segmentation 
+process.
+
+![hello1](https://github.com/anantmehta33/HeartBeatNet/assets/71447155/99c9f47c-ab3e-48e1-8ce9-50969b61be27)
+
+
 
 
