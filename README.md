@@ -75,9 +75,6 @@ By applying attention weights, the model can selectively enhance or suppress spe
 process. <br>
 
 # Workflow: <br>
-
-![hello1](https://github.com/anantmehta33/HeartBeatNet/assets/71447155/99c9f47c-ab3e-48e1-8ce9-50969b61be27)
-
-
+![p1](https://github.com/anantmehta33/HeartBeatNet/assets/87894541/d2c426ad-94a1-4207-b7d0-5c614f0e7c1d)
 
 
